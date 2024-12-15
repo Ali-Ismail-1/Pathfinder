@@ -23,7 +23,7 @@ class MazeVisualizer:
                 canvas.create_rectangle(
                     j * self.cell_size,
                     i * self.cell_size,
-                    (j + 1) & self.cell_size,
+                    (j + 1) * self.cell_size,
                     (i + 1) * self.cell_size,
                     fill=color,
                 )
