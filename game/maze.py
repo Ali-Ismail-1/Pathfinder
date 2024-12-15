@@ -1,10 +1,14 @@
 import random
 
 class Maze:
-    def __init__(self, size):
+    def __init__(self, size, entrance=(1,1), exit=None):
         self.size = size
         self.grid = [[0 for _ in range(size)] for _ in range(size)]
+        self.entrance = entrance
+        self.exit = exit or (size - 2, size - 2)
         self.generate_maze()
+        self.grid[self.entrance[0]][self.entrance[1]] = 1
+        self.grid[self.exit[0]][self.exit[1]] = 1
 
     def generate_maze(self):
         def carve_path(x, y):
@@ -24,8 +28,12 @@ class Maze:
         carve_path(1, 1)
 
     def display(self):
-        for row in self.grid:
-            print(" ".join(["#" if cell == 0 else "." for cell in row]))
+        for i, row in enumerate(self.grid):
+            print(" ".join(["E" if (i, j) == self.entrance else
+                            "X" if (i, j) == self.exit else 
+                            "#" if cell == 0 else "." for j, cell in enumerate(row)]))
+        # for row in self.grid:
+        #     print(" ".join(["#" if cell == 0 else "." for cell in row]))
 
 
 
