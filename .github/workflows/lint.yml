@@ -23,6 +23,12 @@ jobs:
       - name: Run flake8
         run: flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
 
+      - name: Compute hash of maze.py
+        run: shasum -a 256 game/maze.py
+
+      - name: Check Black version
+        run: black --version
+
       - name: Run black
         run: black --check . --verbose
 
