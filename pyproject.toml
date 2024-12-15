@@ -9,3 +9,6 @@ profile = "black"
 python_version = "3.9"
 ignore_missing_imports = true
 strict = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "game"]
