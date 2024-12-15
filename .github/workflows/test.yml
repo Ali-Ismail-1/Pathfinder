@@ -25,4 +25,4 @@ jobs:
         run: echo "PYTHONPATH=$(pwd)" >> $GITHUB_ENV
 
       - name: Run Tests
-        run: pytest --maxfail=5 --disable-warnings
+        run: pytest tests --maxfail=5 --disable-warnings

@@ -1,4 +1,4 @@
-from ..game.maze import Maze
+from game.maze import Maze
 
 
 def test_maze_generation():
